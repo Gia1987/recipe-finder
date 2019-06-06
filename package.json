@@ -48,7 +48,7 @@
         "url-loader": "^1.1.2"
     },
     "dependencies": {
-        "axios": "^0.18.0",
+        "axios": "^0.18.1",
         "cross-env": "^5.2.0",
         "enzyme": "^3.9.0",
         "enzyme-adapter-react-16": "^1.13.0",

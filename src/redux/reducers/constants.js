@@ -1,0 +1,5 @@
+export const API_ENDPOINT_URL = 'https://cors-anywhere.herokuapp.com/'
+export const API_ENDPOINT_GET_RECIPE = 'http://food2fork.com/api/search?key='
+export const API_KEY = 'aedbb2d845263a9cad4857bcec585195'
+export const GET_RECIPE_SUCCESS = 'GET_RECIPE_SUCCESS'
+export const SEARCH_INPUT = 'SEARCH_INPUT'

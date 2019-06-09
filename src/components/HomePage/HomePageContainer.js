@@ -1,8 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import styles from './styles'
 import Search from '../Search'
+import Recipes from '../Recipes'
 
 class HomePageContainer extends Component {
     constructor(props) {
@@ -11,21 +12,14 @@ class HomePageContainer extends Component {
 
     render() {
         return (
-            <div>
+            <Fragment>
                 <div>reactApp</div>
                 <Search />
-            </div>
+                <div style={styles.Container}>{<Recipes />}</div>
+            </Fragment>
         )
     }
 }
-
-HomePageContainer.propTypes = {
-    data: PropTypes.arrayOf(PropTypes.shape({})).isRequired
-}
-
-const mapStateToProps = state => ({
-    data: state.data
-})
 
 // const mapDispatchToProps = dispatch => {
 //     return {
@@ -34,7 +28,6 @@ const mapStateToProps = state => ({
 //     }
 // }
 
-export default connect(
-    mapStateToProps
-    // mapDispatchToProps
-)(HomePageContainer)
+export default connect()(HomePageContainer)
+// mapStateToProps
+// mapDispatchToProps

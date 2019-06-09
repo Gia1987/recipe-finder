@@ -12,16 +12,17 @@ const styles = {
     //     alignItems: 'center',
     //     flexDirection: 'row'
     // },
-    //
-    // label: {
-    //     fontSize: 12,
-    //     marginLeft: 8,
-    //     marginTop: 19.5,
-    //     marginBottom: 8
-    // }
-    Container: {
+    // //
+    // btn: {
+    //     display: 'flex',
+    //     alignItems: 'center'
+    // },
+    recipesCard: {
         display: 'flex',
         flexWrap: 'wrap',
+        // textAlign: 'center',
+        alignItems: 'baseline',
+        justifyContent: 'center',
         flexDirection: 'row'
     }
 }

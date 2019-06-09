@@ -24,6 +24,7 @@ class SearchContainer extends Component {
 
     render() {
         const { searchInput } = this.props
+
         return (
             <div>
                 <Search

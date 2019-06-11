@@ -17,13 +17,17 @@ const styles = {
     //     display: 'flex',
     //     alignItems: 'center'
     // },
+    text: {
+        marginTop: 15
+    },
     recipesCard: {
         display: 'flex',
         flexWrap: 'wrap',
         // textAlign: 'center',
         alignItems: 'baseline',
         justifyContent: 'center',
-        flexDirection: 'row'
+        flexDirection: 'row',
+        marginLeft: 20
     }
 }
 

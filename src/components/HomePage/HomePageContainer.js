@@ -12,11 +12,15 @@ class HomePageContainer extends Component {
 
     render() {
         return (
-            <Fragment>
+            <div style={styles.Container}>
                 <div>reactApp</div>
-                <Search />
-                <div style={styles.Container}>{<Recipes />}</div>
-            </Fragment>
+                <div style={styles.wrapperContainer}>
+                    <Search />
+                </div>
+                <div style={styles.recipes}>
+                    <Recipes />
+                </div>
+            </div>
         )
     }
 }

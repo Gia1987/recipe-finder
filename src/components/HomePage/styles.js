@@ -1,17 +1,20 @@
 const styles = {
-    // formContainer: {
-    //     height: 40,
-    //     width: 530,
-    //     paddingLeft: 10,
-    //     border: '1px solid #D1D1D6',
-    //     fontFamily: 'Montserrat'
-    // },
-    // formGroup: {
-    //     width: '100%',
-    //     display: 'flex',
-    //     alignItems: 'center',
-    //     flexDirection: 'row'
-    // },
+    container: {
+        display: 'flex',
+        // alignItems: 'center',
+        // justifyContent: 'center',
+        flexDirection: 'column',
+        width: '100%',
+        marginBottom: 50
+    },
+    wrapperContainer: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'row',
+        width: '100%'
+    },
+
     //
     // label: {
     //     fontSize: 12,
@@ -19,10 +22,12 @@ const styles = {
     //     marginTop: 19.5,
     //     marginBottom: 8
     // }
-    Container: {
+    recipes: {
+        width: '100%',
         display: 'flex',
         flexWrap: 'wrap',
-        flexDirection: 'row'
+        flexDirection: 'row',
+        marginLeft: 50
     }
 }
 

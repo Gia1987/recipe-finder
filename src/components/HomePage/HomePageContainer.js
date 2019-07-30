@@ -1,6 +1,6 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import styles from './styles'
 import Search from '../Search'
 import Recipes from '../Recipes'
@@ -8,9 +8,13 @@ import Recipes from '../Recipes'
 class HomePageContainer extends Component {
     constructor(props) {
         super(props)
+        this.state= ({})
+        console.log({props})
     }
 
     render() {
+        const {searchInput} = this.props
+        console.log({searchInput})
         return (
             <div style={styles.Container}>
                 <div>reactApp</div>
@@ -25,6 +29,13 @@ class HomePageContainer extends Component {
     }
 }
 
+HomePageContainer.propTypes = {
+    searchInput: PropTypes.string.isRequired
+}
+
+const mapStateToProps = state => ({
+    searchInput: state.updateInputSearch
+})
 // const mapDispatchToProps = dispatch => {
 //     return {
 //         getRecipiesAction: props => dispatch(getRecipe(props)),
@@ -32,6 +43,6 @@ class HomePageContainer extends Component {
 //     }
 // }
 
-export default connect()(HomePageContainer)
+export default connect(mapStateToProps)(HomePageContainer)
 // mapStateToProps
 // mapDispatchToProps

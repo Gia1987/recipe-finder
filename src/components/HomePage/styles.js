@@ -2,7 +2,7 @@ const styles = {
     container: {
         display: 'flex',
         // alignItems: 'center',
-        // justifyContent: 'center',
+        justifyContent: 'center',
         flexDirection: 'column',
         width: '100%',
         marginBottom: 50
@@ -26,8 +26,9 @@ const styles = {
         width: '100%',
         display: 'flex',
         flexWrap: 'wrap',
+        justifyContent: 'center',
         flexDirection: 'row',
-        marginLeft: 50
+        marginTop: 50
     }
 }
 

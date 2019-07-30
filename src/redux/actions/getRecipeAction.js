@@ -9,7 +9,7 @@ import {
 export const getRecipe = type => dispatch => {
     axios
         .get(
-            `${API_ENDPOINT_URL}${API_ENDPOINT_GET_RECIPE}${API_KEY}&q=${type}`
+            `${API_ENDPOINT_URL}${API_ENDPOINT_GET_RECIPE}${API_KEY}&q=${type}`,{ crossdomain: true }
         )
         .then(data => {
             // handle success
@@ -17,13 +17,13 @@ export const getRecipe = type => dispatch => {
                 type: GET_RECIPE_SUCCESS,
                 data
             })
-            console.log(data)
+            console.log({data})
         })
-        .catch(() => {
+        .catch((err) => {
             // handle error
             dispatch({
                 type: GET_RECIPE_SUCCESS,
-                undefined
+                message: err
             })
         })
 }

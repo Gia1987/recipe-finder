@@ -6,12 +6,11 @@ const styles = {
     //     border: '1px solid #D1D1D6',
     //     fontFamily: 'Montserrat'
     // },
-    // formGroup: {
-    //     width: '100%',
-    //     display: 'flex',
-    //     alignItems: 'center',
-    //     flexDirection: 'row'
-    // },
+    image: {
+        // maxWidth: 20,
+        height: 150,
+        width: '100%'
+    },
     // //
     // btn: {
     //     display: 'flex',

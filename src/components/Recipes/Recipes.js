@@ -1,18 +1,19 @@
 import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import { ClipLoader } from 'react-spinners'
 import { Button, Card, Image } from 'semantic-ui-react'
 import styles from './styles'
 
 const Recipes = props => {
     const { recipes } = props
-    if (recipes.length > 0) {
+    if (recipes && recipes.length > 0) {
         return recipes.map(recipe => {
             return (
                 <Fragment key={recipe.recipe_id}>
                     <Card style={styles.recipesCard}>
                         <Card.Content>
-                            <Image src={recipe.image_url} alt={recipe.title} />
+                            <Image style={styles.image} src={recipe.image_url} alt={recipe.title} />
                             <Card.Header style={styles.text}>
                                 {recipe.title.length < 20
                                     ? `${recipe.title}`
@@ -33,7 +34,7 @@ const Recipes = props => {
         })
     }
 
-    return <Fragment />
+    return <ClipLoader/>
 }
 
 Recipes.propTypes = {

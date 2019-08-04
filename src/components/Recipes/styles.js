@@ -7,7 +7,6 @@ const styles = {
     //     fontFamily: 'Montserrat'
     // },
     image: {
-        // maxWidth: 20,
         height: 150,
         width: '100%'
     },
@@ -22,11 +21,19 @@ const styles = {
     recipesCard: {
         display: 'flex',
         flexWrap: 'wrap',
-        // textAlign: 'center',
         alignItems: 'baseline',
         justifyContent: 'center',
         flexDirection: 'row',
-        marginLeft: 20
+        marginLeft: 20,
+        marginTop: 0
+    },
+    Container: {
+        width: '100%',
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        flexDirection: 'row',
+        marginTop: 50
     }
 }
 

@@ -4,13 +4,15 @@ import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import store from './redux/store'
 
-import HomePage from './components/HomePage'
+import Search from './components/Search'
+import Recipes from './components/Recipes'
 
 ReactDOM.render(
     <BrowserRouter>
         <Fragment>
             <Provider store={store}>
-                <HomePage />
+                <Search />
+                <Recipes />
             </Provider>
         </Fragment>
     </BrowserRouter>,

@@ -5,16 +5,18 @@ import styles from './styles'
 
 const Search = ({ getRecipe, handleChange, searchInput }) => {
     return (
-        <Form style={styles.formGroup} onSubmit={getRecipe}>
-            <Form.Group style={styles.input}>
-                <Form.Input
-                    placeholder="Search..."
-                    value={searchInput}
-                    onChange={handleChange}
-                />
-                <Form.Button content="Submit" />
-            </Form.Group>
-        </Form>
+        <div style={styles.wrapperContainer}>
+            <Form style={styles.formGroup} onSubmit={getRecipe}>
+                <Form.Group style={styles.input}>
+                    <Form.Input
+                        placeholder="Search..."
+                        value={searchInput}
+                        onChange={handleChange}
+                    />
+                    <Form.Button content="Submit" />
+                </Form.Group>
+            </Form>
+        </div>
     )
 }
 

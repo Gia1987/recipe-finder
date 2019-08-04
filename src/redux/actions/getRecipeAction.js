@@ -5,11 +5,13 @@ import {
     API_KEY,
     GET_RECIPE_SUCCESS
 } from '../reducers/constants'
+import { updateLoadValue } from './updateLoadAction'
 
 export const getRecipe = type => dispatch => {
     axios
         .get(
-            `${API_ENDPOINT_URL}${API_ENDPOINT_GET_RECIPE}${API_KEY}&q=${type}`,{ crossdomain: true }
+            `${API_ENDPOINT_URL}${API_ENDPOINT_GET_RECIPE}${API_KEY}&q=${type}`,
+            { crossdomain: true }
         )
         .then(data => {
             // handle success
@@ -17,9 +19,10 @@ export const getRecipe = type => dispatch => {
                 type: GET_RECIPE_SUCCESS,
                 data
             })
-            console.log({data})
+            dispatch(updateLoadValue({ value: false }))
+            console.log({ data })
         })
-        .catch((err) => {
+        .catch(err => {
             // handle error
             dispatch({
                 type: GET_RECIPE_SUCCESS,

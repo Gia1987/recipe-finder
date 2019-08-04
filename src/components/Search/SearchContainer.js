@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { getRecipe } from '../../redux/actions/getRecipeAction'
 import { updateInputSearch } from '../../redux/actions/updateInputSearchAction'
+import { updateLoadValue } from '../../redux/actions/updateLoadAction'
+import styles from './styles'
 import Search from './Search'
 
 class SearchContainer extends Component {
@@ -18,21 +20,24 @@ class SearchContainer extends Component {
     };
 
     getRecipe = () => {
-        const { getRecipiesAction, searchInput } = this.props
+        const {
+            getRecipiesAction,
+            searchInput,
+            updateLoadValueAction
+        } = this.props
         getRecipiesAction(searchInput)
+        updateLoadValueAction({ value: true })
     };
 
     render() {
         const { searchInput } = this.props
 
         return (
-            <div>
-                <Search
-                    searchInput={searchInput}
-                    getRecipe={this.getRecipe}
-                    handleChange={this.handleChange}
-                />
-            </div>
+            <Search
+                searchInput={searchInput}
+                getRecipe={this.getRecipe}
+                handleChange={this.handleChange}
+            />
         )
     }
 }
@@ -40,7 +45,8 @@ class SearchContainer extends Component {
 SearchContainer.propTypes = {
     getRecipiesAction: PropTypes.func.isRequired,
     updateInputSearchAction: PropTypes.func.isRequired,
-    searchInput: PropTypes.string.isRequired
+    searchInput: PropTypes.string.isRequired,
+    updateLoadValueAction: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
@@ -50,7 +56,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => {
     return {
         getRecipiesAction: props => dispatch(getRecipe(props)),
-        updateInputSearchAction: props => dispatch(updateInputSearch(props))
+        updateInputSearchAction: props => dispatch(updateInputSearch(props)),
+        updateLoadValueAction: props => dispatch(updateLoadValue(props))
     }
 }
 

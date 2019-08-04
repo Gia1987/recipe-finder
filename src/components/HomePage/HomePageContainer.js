@@ -8,13 +8,13 @@ import Recipes from '../Recipes'
 class HomePageContainer extends Component {
     constructor(props) {
         super(props)
-        this.state= ({})
-        console.log({props})
+        // this.state= ({})
+        // console.log({ props })
     }
 
     render() {
-        const {searchInput} = this.props
-        console.log({searchInput})
+        const { searchInput } = this.props
+        console.log({ searchInput })
         return (
             <div style={styles.Container}>
                 <div>reactApp</div>

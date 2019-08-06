@@ -1,39 +1,44 @@
 const styles = {
-    // formContainer: {
-    //     height: 40,
-    //     width: 530,
-    //     paddingLeft: 10,
-    //     border: '1px solid #D1D1D6',
-    //     fontFamily: 'Montserrat'
-    // },
+
     image: {
         height: 150,
         width: '100%'
     },
-    // //
-    // btn: {
-    //     display: 'flex',
-    //     alignItems: 'center'
-    // },
+
     text: {
         marginTop: 15
     },
+
     recipesCard: {
         display: 'flex',
         flexWrap: 'wrap',
         alignItems: 'baseline',
         justifyContent: 'center',
         flexDirection: 'row',
-        marginLeft: 20,
-        marginTop: 0
+        marginLeft: 40,
+        marginTop: 30,
+        marginBottom: 'auto'
     },
-    Container: {
+    container: {
         width: '100%',
+        maxWidth: 1200,
+        margin: 'auto',
+        paddingRight: 30,
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'center',
         flexDirection: 'row',
-        marginTop: 50
+        marginTop: 50,
+        marginBottom: 90,
+    },
+    spinner:{
+        width: '100%',
+        margin: 'auto',
+        paddingRight: 30,
+        display: 'flex',
+        justifyContent: 'center',
+        marginTop: 50,
+        marginBottom: 50
     }
 }
 

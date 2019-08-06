@@ -28,7 +28,7 @@ const Recipes = props => {
                         </Card.Content>
                         <Card.Content extra>
                             <Button style={styles.btn} basic color="green">
-                                <a href={recipe.source_url} target="_blank">
+                                <a href={recipe.source_url} rel='noreferrer noopener' target="_blank">
                                     View Recipe
                                 </a>
                             </Button>

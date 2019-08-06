@@ -17,14 +17,14 @@ class RecipesContainer extends Component {
 
         if (loadValue) {
             return (
-                <div style={styles.Container}>
+                <div style={styles.spinner}>
                     <ClipLoader />
                 </div>
             )
         }
         if (recipes && recipes.length > 0) {
             return (
-                <div style={styles.Container}>
+                <div style={styles.container}>
                     <Recipes />
                 </div>
             )

@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import { getRecipe } from '../../redux/actions/getRecipeAction'
 import { updateInputSearch } from '../../redux/actions/updateInputSearchAction'
 import { updateLoadValue } from '../../redux/actions/updateLoadAction'
-import styles from './styles'
 import Search from './Search'
 
 class SearchContainer extends Component {

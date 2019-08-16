@@ -2,12 +2,12 @@ const express = require('express')
 const path = require('path')
 const dotenv = require('dotenv')
 
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.REACT_APP_ENV !== 'production') {
     dotenv.config()
 }
 
 const app = express()
-if (process.env.NODE_ENV === 'production') {
+if (process.env.REACT_APP_ENV === 'production') {
     app.use((req, res, next) => {
         res.append('X-XSS-Protection', '1; mode=block')
         res.append('X-Content-Type-Options', 'nosniff')
@@ -23,14 +23,14 @@ if (process.env.NODE_ENV === 'production') {
         next()
     })
 
-    app.use(express.static(path.join(__dirname, '/build')))
+    app.use(express.static(path.join(__dirname, '/dist')))
 
     app.get('*', (req, res) => {
-        res.sendFile(path.join(`${__dirname}/build/index.html`))
+        res.sendFile(path.join(`${__dirname}/dist/index.html`))
     })
 }
 
-const PORT = process.env.port || 8081
+const PORT = 8081
 
 app.listen(PORT)
 // , () => {

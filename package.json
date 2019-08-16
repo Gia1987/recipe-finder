@@ -1,13 +1,13 @@
 {
-  "name": "React-boiler",
+  "name": "React-rcp",
   "version": "1.0.0",
   "description": "",
   "homepage": "http://localhost:3000",
   "main": "index.js",
   "scripts": {
     "dev": "parcel ./src/index.html --port 3000",
-    "build": "NODE_ENV=production parcel build src/index.html --public-url ./",
-    "start": "cross-env NODE_ENV=development parcel src/index.html ",
+    "build": "parcel build src/index.html --public-url http://recipe-finder.eu-west-2.elasticbeanstalk.com",
+    "start": "cross-env parcel src/index.html ",
     "lint": "eslint ./src/**/**.js",
     "lint:fix": "eslint ./src/**/**.js --fix",
     "test": "jest",

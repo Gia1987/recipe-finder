@@ -1,8 +1,9 @@
 const express = require('express')
 const path = require('path')
+const dotenv = require('dotenv')
 
 if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').load()
+    dotenv.load()
 }
 
 const app = express()

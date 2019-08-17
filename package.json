@@ -1,11 +1,13 @@
 {
-    "name": "React-boiler",
+    "name": "React-rcp",
     "version": "1.0.0",
     "description": "",
     "homepage": "http://localhost:3000",
     "main": "index.js",
     "scripts": {
-        "dev": "parcel ./src/index.html --port 3000",
+        "dev": "parcel ./src/index.html --open --port 3000",
+        "build": "parcel build src/index.html --no-minify --public-url ./",
+        "start": "parcel src/index.html",
         "lint": "eslint ./src/**/**.js",
         "lint:fix": "eslint ./src/**/**.js --fix",
         "test": "jest",
@@ -28,10 +30,6 @@
         "@babel/preset-react": "^7.0.0",
         "@babel/register": "^7.4.4",
         "@babel/runtime": "^7.4.4",
-        "babel-core": "^7.0.0-bridge.0",
-        "babel-eslint": "^10.0.1",
-        "babel-jest": "^24.8.0",
-        "babel-loader": "^8.0.6",
         "eslint": "^5.16.0",
         "eslint-config-airbnb": "^17.1.0",
         "eslint-config-prettier": "^4.3.0",
@@ -48,7 +46,11 @@
         "url-loader": "^1.1.2"
     },
     "dependencies": {
+        "@babel/polyfill": "^7.4.4",
         "axios": "^0.18.1",
+        "babel-eslint": "^10.0.1",
+        "babel-jest": "^24.8.0",
+        "babel-loader": "^8.0.6",
         "cross-env": "^5.2.0",
         "dotenv": "^8.0.0",
         "enzyme": "^3.9.0",

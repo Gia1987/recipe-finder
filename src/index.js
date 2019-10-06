@@ -5,18 +5,16 @@ import { BrowserRouter } from 'react-router-dom'
 import store from './redux/store'
 
 import Header from './components/Header'
-import Search from './components/Search'
-import Recipes from './components/Recipes'
+import Homepage from './scenes/Homepage'
 import Footer from './components/Footer'
 
 ReactDOM.render(
     <BrowserRouter>
         <Fragment>
             <Provider store={store}>
-                <Header/>
-                <Search />
-                <Recipes />
-                <Footer/>
+                <Header />
+                <Homepage />
+                <Footer />
             </Provider>
         </Fragment>
     </BrowserRouter>,

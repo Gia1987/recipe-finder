@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { getRecipe } from '../../redux/actions/getRecipeAction'
 import { updateInputSearch } from '../../redux/actions/updateInputSearchAction'
-import { updateLoadValue } from '../../redux/actions/updateLoadAction'
+import { toggleSpinner } from '../../redux/actions/toggleSpinnerAction'
 import Search from './Search'
 
 class SearchContainer extends Component {
@@ -22,10 +22,10 @@ class SearchContainer extends Component {
         const {
             getRecipiesAction,
             searchInput,
-            updateLoadValueAction
+            toggleSpinnerAction
         } = this.props
         getRecipiesAction(searchInput)
-        updateLoadValueAction({ value: true })
+        toggleSpinnerAction({ value: true })
     };
 
     render() {
@@ -45,7 +45,7 @@ SearchContainer.propTypes = {
     getRecipiesAction: PropTypes.func.isRequired,
     updateInputSearchAction: PropTypes.func.isRequired,
     searchInput: PropTypes.string.isRequired,
-    updateLoadValueAction: PropTypes.func.isRequired
+    toggleSpinnerAction: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
@@ -56,7 +56,7 @@ const mapDispatchToProps = dispatch => {
     return {
         getRecipiesAction: props => dispatch(getRecipe(props)),
         updateInputSearchAction: props => dispatch(updateInputSearch(props)),
-        updateLoadValueAction: props => dispatch(updateLoadValue(props))
+        toggleSpinnerAction: props => dispatch(toggleSpinner(props))
     }
 }
 

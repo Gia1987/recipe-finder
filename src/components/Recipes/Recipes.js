@@ -4,8 +4,7 @@ import PropTypes from 'prop-types'
 import { Button, Card, Image } from 'semantic-ui-react'
 import styles from './styles'
 
-const Recipes = props => {
-    const { recipes } = props
+const Recipes = ({ recipes }) => {
     if (recipes && recipes.length > 0) {
         return recipes.map(recipe => {
             return (
@@ -28,7 +27,11 @@ const Recipes = props => {
                         </Card.Content>
                         <Card.Content extra>
                             <Button style={styles.btn} basic color="green">
-                                <a href={recipe.source_url} rel='noreferrer noopener' target="_blank">
+                                <a
+                                    href={recipe.source_url}
+                                    rel="noreferrer noopener"
+                                    target="_blank"
+                                >
                                     View Recipe
                                 </a>
                             </Button>
@@ -46,11 +49,4 @@ Recipes.propTypes = {
     recipes: PropTypes.arrayOf(PropTypes.shape({})).isRequired
 }
 
-const mapStateToProps = state => ({
-    recipes: state.getRecipe.data.recipes
-})
-// export default Recipes
-export default connect(
-    mapStateToProps
-    // mapDispatchToProps
-)(Recipes)
+export default Recipes

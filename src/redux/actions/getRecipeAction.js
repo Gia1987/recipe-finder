@@ -5,7 +5,7 @@ import {
     API_KEY,
     GET_RECIPE_SUCCESS
 } from '../reducers/constants'
-import { updateLoadValue } from './updateLoadAction'
+import { toggleSpinner } from './toggleSpinnerAction'
 
 export const getRecipe = type => dispatch => {
     axios
@@ -17,10 +17,10 @@ export const getRecipe = type => dispatch => {
             // handle success
             dispatch({
                 type: GET_RECIPE_SUCCESS,
-                data
+                recipes: data.data.recipes
             })
-            dispatch(updateLoadValue({ value: false }))
-            console.log({ data })
+            dispatch(toggleSpinner({ value: false }))
+            // console.log(data.data.error)
         })
         .catch(err => {
             // handle error

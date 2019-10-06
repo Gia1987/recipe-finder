@@ -10,7 +10,7 @@
         "start": "parcel src/index.html",
         "lint": "eslint ./src/**/**.js",
         "lint:fix": "eslint ./src/**/**.js --fix",
-        "test": "jest",
+        "test": "jest --no-cache",
         "test:watch": "npm run test --watch",
         "test:cover": "npm run test --coverage"
     },
@@ -21,7 +21,7 @@
         "@babel/cli": "^7.4.4",
         "@babel/core": "^7.4.4",
         "@babel/node": "^7.2.2",
-        "@babel/plugin-proposal-class-properties": "^7.5.5",
+        "@babel/plugin-proposal-class-properties": "^7.4.4",
         "@babel/plugin-syntax-dynamic-import": "^7.2.0",
         "@babel/plugin-syntax-import-meta": "^7.2.0",
         "@babel/plugin-transform-async-to-generator": "^7.4.4",
@@ -30,6 +30,10 @@
         "@babel/preset-react": "^7.0.0",
         "@babel/register": "^7.4.4",
         "@babel/runtime": "^7.4.4",
+        "babel-plugin-syntax-class-properties": "^6.13.0",
+        "babel-plugin-transform-class-properties": "^6.24.1",
+        "enzyme": "^3.10.0",
+        "enzyme-adapter-react-16": "^1.14.0",
         "eslint": "^5.16.0",
         "eslint-config-airbnb": "^17.1.0",
         "eslint-config-prettier": "^4.3.0",
@@ -42,6 +46,7 @@
         "jest": "^24.8.0",
         "jest-dom": "^3.2.2",
         "prettier": "^1.17.1",
+        "react-test-renderer": "^15.6.2",
         "react-testing-library": "^7.0.0",
         "url-loader": "^1.1.2"
     },
@@ -51,31 +56,53 @@
         "babel-eslint": "^10.0.1",
         "babel-jest": "^24.8.0",
         "babel-loader": "^8.0.6",
+        "components": "^0.1.0",
+        "core-js": "^3.2.1",
         "cross-env": "^5.2.0",
         "dotenv": "^8.0.0",
-        "enzyme": "^3.9.0",
-        "enzyme-adapter-react-16": "^1.13.0",
         "enzyme-to-json": "^3.3.5",
         "parcel-bundler": "^1.12.3",
+        "path": "^0.12.7",
         "prop-types": "^15.7.2",
-        "react": "^16.8.6",
-        "react-dom": "^16.8.6",
+        "react": "^16.10.1",
+        "react-dom": "^16.10.1",
         "react-redux": "^7.0.3",
         "react-router-dom": "^5.0.0",
         "react-spinners": "^0.5.13",
         "redux": "^4.0.1",
         "redux-logger": "^3.0.6",
+        "redux-mock-store": "^1.5.3",
         "redux-thunk": "^2.3.0",
         "semantic-ui-css": "^2.4.1",
         "semantic-ui-react": "^0.87.1",
         "styled-components": "^4.2.0"
     },
     "jest": {
+        "verbose": true,
+        "moduleDirectories": [
+            "node_modules",
+            "src"
+        ],
+        "moduleFileExtensions": [
+            "js",
+            "jsx",
+            "json"
+        ],
         "setupFiles": [
-            "<rootDir>/config/tests/jest.config"
+            "./src/setupTests.js"
         ],
         "transform": {
             "^.+\\.js$": "babel-jest"
-        }
+        },
+        "moduleNameMapper": {
+            "^@/(.*)$": "<rootDir>/src/$1",
+            "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/mocks/fileMock.js"
+        },
+        "testMatch": [
+            "<rootDir>/src/**/__test__/*.test.js"
+        ],
+        "transformIgnorePatterns": [
+            "<rootDir>/node_modules/"
+        ]
     }
 }

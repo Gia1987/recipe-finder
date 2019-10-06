@@ -1,8 +1,8 @@
-import { LOAD_VALUE } from './constants'
+import { TOGGLE_SPINNER } from './constants'
 
 export function reducer(state = false, action) {
     switch (action.type) {
-    case LOAD_VALUE:
+    case TOGGLE_SPINNER:
         return action.value
     default:
         return state

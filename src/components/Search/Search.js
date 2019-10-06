@@ -6,7 +6,7 @@ import styles from './styles'
 const Search = ({ getRecipe, handleChange, searchInput }) => {
     return (
         <div>
-            <Form style={styles.formGroup} onSubmit={getRecipe}>
+            <Form data-cy="form" style={styles.formGroup} onSubmit={getRecipe}>
                 <Form.Group>
                     <Form.Input
                         placeholder="Search..."

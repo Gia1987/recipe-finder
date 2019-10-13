@@ -1,10 +1,9 @@
 import { SEARCH_INPUT } from '../reducers/constants'
 
-export const updateInputSearch = data => dispatch => {
-    const { text } = data
-    dispatch({
+export const updateInputSearch = (singleActionProp, text) => {
+    singleActionProp({
         type: SEARCH_INPUT,
-        text
+        payload: { value: text }
     })
 }
 

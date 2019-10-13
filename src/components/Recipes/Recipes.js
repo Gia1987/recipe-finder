@@ -1,10 +1,16 @@
 import React, { Fragment } from 'react'
-import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { Button, Card, Image } from 'semantic-ui-react'
 import styles from './styles'
 
 const Recipes = ({ recipes }) => {
+    if (recipes === 'limit') {
+        return (
+            <div>
+                <span>API`s limit reached. Please try again later. </span>
+            </div>
+        )
+    }
     if (recipes && recipes.length > 0) {
         return recipes.map(recipe => {
             return (

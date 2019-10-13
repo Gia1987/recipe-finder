@@ -1,9 +1,10 @@
 import { TOGGLE_SPINNER } from './constants'
 
 export function reducer(state = false, action) {
-    switch (action.type) {
+    const { payload, type } = action
+    switch (type) {
     case TOGGLE_SPINNER:
-        return action.value
+        return payload.value
     default:
         return state
     }

@@ -1,15 +1,11 @@
-import React, { Component, Fragment } from 'react'
+import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import ClipLoader from 'react-spinners/ClipLoader'
 import styles from './styles'
 import Recipes from './Recipes'
 
-class RecipesContainer extends Component {
-    constructor(props) {
-        super(props)
-    }
-
+class RecipesContainer extends PureComponent {
     render() {
         const { recipes, toggleSpinner } = this.props
 

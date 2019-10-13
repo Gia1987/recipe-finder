@@ -10,7 +10,7 @@ const styles = {
         justifyContent: 'space-between',
         alignItems: 'flex-start',
         borderTop: '1px solid #41474e',
-        padding: 16,
+        padding: 16
         // position: 'fixed'
     },
     menuContainer: {

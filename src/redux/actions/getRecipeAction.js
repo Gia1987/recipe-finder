@@ -7,27 +7,28 @@ import {
 } from '../reducers/constants'
 import { toggleSpinner } from './toggleSpinnerAction'
 
-export const getRecipe = type => dispatch => {
-    axios
+export const getRecipe = async (singleActionProp, type) => {
+    const response = await axios
         .get(
             `${API_ENDPOINT_URL}${API_ENDPOINT_GET_RECIPE}${API_KEY}&q=${type}`,
             { crossdomain: true }
         )
         .then(data => {
             // handle success
-            dispatch({
-                type: GET_RECIPE_SUCCESS,
-                recipes: data.data.recipes
-            })
-            dispatch(toggleSpinner({ value: false }))
-            // console.log(data.data.error)
+            if (data.data && data.data.error) {
+                return data.data.error
+            }
+            return data.data.recipes
         })
         .catch(err => {
             // handle error
-            dispatch({
-                type: GET_RECIPE_SUCCESS,
-                message: err
-            })
+            return err
         })
+
+    singleActionProp({
+        type: GET_RECIPE_SUCCESS,
+        payload: { value: response }
+    })
+    toggleSpinner(singleActionProp, false)
 }
 export default getRecipe

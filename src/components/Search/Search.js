@@ -3,10 +3,14 @@ import { Form } from 'semantic-ui-react'
 import PropTypes from 'prop-types'
 import styles from './styles'
 
-const Search = ({ getRecipe, handleChange, searchInput }) => {
+const Search = ({ handleButton, handleChange, searchInput }) => {
     return (
         <div>
-            <Form data-cy="form" style={styles.formGroup} onSubmit={getRecipe}>
+            <Form
+                data-cy="form"
+                style={styles.formGroup}
+                onSubmit={handleButton}
+            >
                 <Form.Group>
                     <Form.Input
                         placeholder="Search..."
@@ -22,7 +26,7 @@ const Search = ({ getRecipe, handleChange, searchInput }) => {
 
 Search.propTypes = {
     searchInput: PropTypes.string.isRequired,
-    getRecipe: PropTypes.func.isRequired,
+    handleButton: PropTypes.func.isRequired,
     handleChange: PropTypes.func.isRequired
 }
 export default Search

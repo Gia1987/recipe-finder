@@ -1,31 +1,24 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import { singleAction } from '../../redux/actions/singleAction'
 import { getRecipe } from '../../redux/actions/getRecipeAction'
 import { updateInputSearch } from '../../redux/actions/updateInputSearchAction'
 import { toggleSpinner } from '../../redux/actions/toggleSpinnerAction'
 import Search from './Search'
 
-class SearchContainer extends Component {
-    constructor(props) {
-        super(props)
-
-        this.handleChange = this.handleChange.bind(this)
-    }
-
+class SearchContainer extends PureComponent {
     handleChange = e => {
-        const { updateInputSearchAction } = this.props
-        updateInputSearchAction({ text: e.target.value })
+        const { singleActionProp } = this.props
+
+        updateInputSearch(singleActionProp, e.target.value)
     };
 
-    getRecipe = () => {
-        const {
-            getRecipiesAction,
-            searchInput,
-            toggleSpinnerAction
-        } = this.props
-        getRecipiesAction(searchInput)
-        toggleSpinnerAction({ value: true })
+    handleButton = () => {
+        const { singleActionProp, searchInput } = this.props
+
+        getRecipe(singleActionProp, searchInput)
+        toggleSpinner(singleActionProp, true)
     };
 
     render() {
@@ -34,7 +27,7 @@ class SearchContainer extends Component {
         return (
             <Search
                 searchInput={searchInput}
-                getRecipe={this.getRecipe}
+                handleButton={this.handleButton}
                 handleChange={this.handleChange}
             />
         )
@@ -42,10 +35,8 @@ class SearchContainer extends Component {
 }
 
 SearchContainer.propTypes = {
-    getRecipiesAction: PropTypes.func.isRequired,
-    updateInputSearchAction: PropTypes.func.isRequired,
-    searchInput: PropTypes.string.isRequired,
-    toggleSpinnerAction: PropTypes.func.isRequired
+    singleActionProp: PropTypes.func.isRequired,
+    searchInput: PropTypes.string.isRequired
 }
 
 const mapStateToProps = state => ({
@@ -54,9 +45,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => {
     return {
-        getRecipiesAction: props => dispatch(getRecipe(props)),
-        updateInputSearchAction: props => dispatch(updateInputSearch(props)),
-        toggleSpinnerAction: props => dispatch(toggleSpinner(props))
+        singleActionProp: props => dispatch(singleAction(props))
     }
 }
 

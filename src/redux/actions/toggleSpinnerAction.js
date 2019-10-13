@@ -1,10 +1,9 @@
 import { TOGGLE_SPINNER } from '../reducers/constants'
 
-export const toggleSpinner = data => dispatch => {
-    const { value } = data
-    dispatch({
+export const toggleSpinner = (singleActionProp, value) => {
+    singleActionProp({
         type: TOGGLE_SPINNER,
-        value
+        payload: { value }
     })
 }
 

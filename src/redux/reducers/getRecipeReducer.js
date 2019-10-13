@@ -1,11 +1,11 @@
 import { GET_RECIPE_SUCCESS } from './constants'
 
 export function reducer(state = [], action) {
-    switch (action.type) {
+    const { payload, type } = action
+    switch (type) {
     case GET_RECIPE_SUCCESS:
-        return action.recipes || state
+        return payload.value || state
     default:
-        console.log(state)
         return state
     }
 }

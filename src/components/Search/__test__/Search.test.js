@@ -4,7 +4,7 @@ import Search from '../Search'
 
 const setup = () => {
     const props = {
-        getRecipe: () => {},
+        handleButton: () => {},
         handleChange: () => {},
         searchInput: ''
     }

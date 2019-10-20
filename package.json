@@ -8,6 +8,7 @@
         "dev": "parcel ./src/index.html --open --port 3000",
         "build": "parcel build src/index.html --no-minify --public-url ./",
         "start": "parcel src/index.html",
+        "heroku-postbuild": "npm run build",
         "lint": "eslint ./src/**/**.js",
         "lint:fix": "eslint ./src/**/**.js --fix",
         "test": "jest --no-cache",
